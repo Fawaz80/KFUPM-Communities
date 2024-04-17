@@ -165,6 +165,7 @@ body {
         grid-template-columns: auto auto;
         margin-right: 10px;
         align-items: center;
+        border-radius: 8px;
         
 
         h1 {
