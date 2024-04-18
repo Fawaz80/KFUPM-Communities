@@ -1,0 +1,64 @@
+#nav-icon{
+    height: 10vh;
+    margin-left: 5vh;  
+    margin-bottom: 7vh;
+}
+
+
+#main-navbar{
+    background-color: rgba(0, 0, 0, 0.70) !important;
+    border: 0px !important; 
+    height: 13vh;
+    
+}
+
+#main-searchbar{
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 30px;
+    height: 6vh;
+    width: 75vh;
+    border-color: white;
+    margin-bottom: 7vh;
+}
+
+#main-searchbar::placeholder{
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 3vh;
+}
+
+#main-searchbar:hover, #main-searchbar:focus{
+    box-shadow: 0 0 0 0.1rem rgb(255, 255, 255, 1);
+}
+
+#nav-opt-container{
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 30px;   
+    width: 35vh;
+    margin-bottom: 7vh ; 
+    height: 8vh;
+    padding: 4vh;
+}
+
+.userIcon{
+    height: 6vh;
+    border-radius: 100px;
+    
+}
+
+#nav-username{
+    font-size: 3vh;
+    margin-left: 1vh;
+    margin-top: 4vh;
+    padding-right: 3vh;
+}
+
+.navprofile{
+    width: 1000px;
+}
+
+.bi-three-dots-vertical{
+    color: white;
+}
+

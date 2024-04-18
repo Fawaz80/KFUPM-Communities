@@ -1,0 +1,32 @@
+.gridLayout{
+    display: grid;
+    grid-template-columns: auto 120vh auto;
+}
+
+.left-shadow{
+    height: 100vh;
+    width: 30vh;
+    background-color: rgba(0, 0, 0, 0.70);
+    margin-top: 15vh;
+    margin-right: 15vh;
+    border-radius: 10px;
+
+}
+
+.main-shadow{
+    height: 100vh;
+    background-color:rgba(0, 0, 0, 0.70);
+    margin: 15vh 0vh 0vh 10vh;
+    border-radius: 10px;
+
+}
+
+.right-shadow{
+    height:100vh;
+    width: 30vh;
+    background-color:rgba(0, 0, 0, 0.70);
+    margin-top: 15vh;
+    margin-left: 28vh;
+    border-radius: 10px;
+}
+
