@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="mainStyle.css"> <!--this file has the main styling fonts and background-->
+    <link rel="stylesheet" href="navbarStyle.css"> <!--this file contains the navbar present in multiple pages-->
+    <link rel="stylesheet" href="maingrid.css"> <!--this file has the main grid of multiple pages, inlcuding home, community, profile pages-->
+    <link rel="stylesheet" href="postStyle.css"> <!--this file contains the styling of the posts that is present in multiple files-->
+    <link rel="stylesheet" href="comlistStyle.css"> <!--this file contains the styling of the community list that is present in the homepage-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
+    <title>KFUPM Communities</title>
+</head>
+<body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark" id = "main-navbar">
+       
+        <img src="images/icons/icon-text-trans.png" alt="KFUPM Communities Icon" id = "nav-icon">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id = "main-searchbar">
+        </form>
+
+          <div id = "nav-opt-container">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id = "navbar-username">
+                    <img src="images/userIcon/userx.jpg" alt="icon" class = "userIcon">
+                    JohnDoe
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+                  <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                  <li><a class="dropdown-item" href="mailto:fawazabdulaziz7@gmail.com">Contact Us</a></li>
+                  <li><a class="dropdown-item" href="login.html">Log out</a></li>
+                </ul>
+              </div>
+            </div>
+      </nav>
+  
+      <div class = "gridLayout">
+        <div class = "left-shadow">
+          <!--write the code of the Community list under here:-->
+          <h1 style="font-size: 24px;">My Communities  <a href="#overlay" class="addCommunityButton"><i class="bi bi-plus-circle"></i></a> </h1>
+          <div id="overlay" class="overlay">
+            <div id="popup" class="popup">
+                <h2>Add New Community</h2>
+                <form id="communityForm">
+                    <label for="communityPhoto">Community Photo:</label>
+                    <input type="file" id="communityPhoto">
+
+                    <label for="communityName">Community Name:</label>
+                    <input type="text" id="communityName">
+
+                    <label for="communityBio">Community Bio:</label>
+                    <textarea id="communityBio"></textarea>
+
+                    <label for="privateCommunity">Private Community:</label>
+                    <input type="checkbox" id="privateCommunity">
+
+                    <div class="buttons">
+                        <button type="submit" id="saveButton">Save</button>
+                        <a href="#" id="cancelButton" class="cancelButton">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div> 
+        <ul class="community-list">
+          <li class="community-item"><i class="bi bi-people-fill"></i> <a href="community.html"> @CommunityX</a></li>
+          <li class="community-item"><i class="bi bi-people-fill"></i> <a href="community.html"> @CommunityY</a></li>
+          <li class="community-item"><i class="bi bi-people-fill"></i> <a href="community.html"> @CommunityZ</a></li>
+          <li class="community-item"><i class="bi bi-people-fill"></i> <a href="community.html"> @CommunityF</a></li>
+          <li class="community-item"><i class="bi bi-people-fill"></i> <a href="community.html"> @CommunityA</a></li>
+          <!-- Add more communities as needed -->
+      </ul>
+        </div>
+          <div class ="spacing"></div>
+          <div class = "main-shadow">
+            <!-- write the code of the posts board here-->
+            <div class="header-container">
+              <div class="pleft-container">
+                <p>Posts</p>
+              </div>
+              <div class="pmid-container">
+                <button type="button" class="btn btn-light postnew"><i class="bi bi-pencil pen-icon"></i> Write</button>
+              </div>
+              <div class="pright-container">
+                <div class="btn-group">
+                  <!-- First button (Dropdown) -->
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle refine-button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Filter
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#"><p>Liked</p></a></li>
+                      <li><a class="dropdown-item" href="#"><p>Host</p></a></li>
+              
+                    </ul>
+                  </div>
+                  
+                  <!-- Second button (Dropdown) -->
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle refine-button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Sort
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#"><p>Newest</p></a></li>
+                      <li><a class="dropdown-item" href="#"><P>Oldest</P></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class = "post-container">
+            <div class="post-header-part">
+              <img src="images/userIcon/userx.jpg" alt="Image" style="width: 7vh; border-radius: 100px; height: auto;">
+              <p>JohnDoe</p>
+            </div>
+            <div class="post-body-part">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim odio eu felis ullamcorper, nec fermentum odio semper. Donec ut tortor nisl. Nullam aliquet luctus tortor, vel consequat odio ullamcorper non.</p>
+            </div>
+            <div class="post-footer-part">
+              <p class="left-text">Post 2024/5/2 to @communityx</p>
+              <p class="right-text"><a href=""><i class="bi bi-heart"></i></a>33 <a href=""><i class="bi bi-hand-thumbs-down"></i></a>1 <a href=""><i class="bi bi-chat"></i></a>0</p>
+            </div>
+          </div>
+          <div class ="spacing"></div>
+          <div></div>
+          
+      </div>
+    
+  </body>
+</html>

@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999;
+}
+
+.overlay:target {
+    display: block;
+}
+
+.popup {
+    background-color: black; /* Change background color to black */
+    color: white; /* Change text color to white */
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button,
+.buttons a {
+    margin-right: 10px;
+}
+
+.bi {
+    color: white;
+}
+.community-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.community-item {
+    padding: 10px 0;
+}
+
+.community-item:last-child {
+    border-bottom: none; /* Remove border from last item */
+}
+.btn {
+    background-color: white
+    color white;
+}
