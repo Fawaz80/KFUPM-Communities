@@ -1,0 +1,94 @@
+body {
+    background-image: url(https://github.com/Fawaz80/KFUPM-Communities/blob/main/Project%20KC/images/background/space.jpg?raw=true);
+    color: white;
+}
+
+.main-shadow {
+    padding: 25px;
+    margin: 25px;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    border-radius: 16px;
+}
+
+.eventH1 {
+    grid-area: 1 / 1 / 2 / 2;
+    margin: 0px;
+}
+
+.create {
+    grid-area: 1 / 2 / 2 / 3;
+    height: 75%;
+    width: 65%;
+    padding: 0px 10px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.allEventsDiv {
+    grid-area: 2 / 1 / 3 / 4;
+    width: 100%;
+}
+
+.eventDiv {
+    width: 100%;
+    padding: 5px 10px 0px 10px;
+    margin: 25px 0px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: solid 2px white;
+    border-radius: 8px;
+}
+
+.upperEvent {
+    padding: 10px 25px;
+    display: grid;
+    justify-content: start;
+    align-items: center;
+}
+
+
+
+.eventName {
+    grid-row: 1 / 2;
+    text-decoration: none;
+    font-size: x-large;
+    color: white;
+}
+
+.eventStartDate {
+    grid-row: 2 / 3;
+    padding-left: 15px;
+    margin: 0px;
+}
+
+.eventContent {
+    height: fit-content;
+    padding: 10px 0px;
+}
+
+.eventText {
+    margin: 0px;
+}
+
+.bottomEvent {
+    display: grid;
+    grid-column: auto auto;
+    justify-content: space-between;
+}
+
+.eventInfo {
+    grid-column: 1 / 2;
+}
+
+
+button {
+    border-style: none;
+}
+
+span {
+    color: white;
+}   
