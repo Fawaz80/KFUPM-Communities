@@ -1,0 +1,31 @@
+.gridLayout{
+    display: grid;
+    grid-template-columns: 15% 10% 50% 10% 15%;
+    
+}
+
+.left-shadow{
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.70);
+    margin-top: 20vh;
+    border-radius: 10px;
+}
+
+.main-shadow{
+    height: auto;
+    background-color:rgba(0, 0, 0, 0.70);
+    margin-top: 20vh;
+    border-radius: 10px;
+}
+
+.right-shadow{
+    height: auto;
+    background-color:rgba(0, 0, 0, 0.70);
+    margin-top: 20vh;
+    border-radius: 10px;
+}
+
+.spacing{
+    height: 100vh;
+}
+
