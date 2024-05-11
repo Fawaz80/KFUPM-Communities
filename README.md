@@ -13,13 +13,13 @@ Please note the following before you start working:
 2. after you finish the database, start working the modules, modules you will need include: express, mongodb, mongoose, bcrypt, express-session, nunjucks. that is all i can recall for now.
 
 after you finish the modules, please understand the structure we are following, as we have 5 folders in the main directory and 2 files:
-a. db.js: this file connects to the database and that is it.
-b. models: this folder is responsible for the schemas, it can also be used for validation. check the user.js file inside this folder, you can see how it specifies the min and max length of the username and other restrictions.
-c. controller: this folder has functions, such as signUp(), logIn(), and other CRUD (create, read, update, delete) operations. it also imports the user models created in the user.js inside models folder.
-d. api: this folder is called api, we can also call it routes. it is responsible for routing, or in other words it connects the server.js to the controller. notice every route inside any file in this folder calls a function that is made in controller folder.
-e. public: this file has the styles and images folders inside of it, as well as static html files, but in our case all of our files are dynamic. so no html files. 
-f. views: this file serves dynamic files, notice all html files we did in phase 1 are now njk files in this folder.
-g. server.js: this file starts up the website and calls for actions that will be executed in the controller.
+1. db.js: this file connects to the database and that is it.
+2. models: this folder is responsible for the schemas, it can also be used for validation. check the user.js file inside this folder, you can see how it specifies the min and max length of the username and other restrictions.
+3. controller: this folder has functions, such as signUp(), logIn(), and other CRUD (create, read, update, delete) operations. it also imports the user models created in the user.js inside models folder.
+4. api: this folder is called api, we can also call it routes. it is responsible for routing, or in other words it connects the server.js to the controller. notice every route inside any file in this folder calls a function that is made in controller folder.
+5. public: this file has the styles and images folders inside of it, as well as static html files, but in our case all of our files are dynamic. so no html files. 
+6. views: this file serves dynamic files, notice all html files we did in phase 1 are now njk files in this folder.
+7. server.js: this file starts up the website and calls for actions that will be executed in the controller.
 
 
 
