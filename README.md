@@ -21,6 +21,9 @@ after you finish the modules, please understand the structure we are following, 
 6. views: this file serves dynamic files, notice all html files we did in phase 1 are now njk files in this folder.
 7. server.js: this file starts up the website and calls for actions that will be executed in the controller.
 
+lets say the server is up and running, now what you can do is basically, write localhost:3000/login in the search bar of your chosen browser
+this will send you to the login page.
+
 
 
 These are all the notes for now.
