@@ -1,6 +1,7 @@
 // Import the Community model
 const Community = require("../models/community");
 const session = require("express-session");
+
 // Get all communities
 async function getAllCommunities(req, res) {
 	try {
@@ -26,6 +27,21 @@ async function createCommunity(req, res) {
 		await newCommunity.save();
 		console.log("community created successfully");
 		res.render("community", { navUsername: req.session.username });
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+}
+
+// Get communities by name
+async function getCommunityByName(req, res) {
+	try {
+		const regex = new RegExp("^"+req.query.communityName,"i");
+		const communities = await Community.find( {comName: regex} );
+		if (!communities || communities.length==0) {
+			return res.status(404).json({ message: "No communities were found" });
+		}
+		req.session.communities = communities;
+		res.render("searchedCommunity", {communities: communities})
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
@@ -88,6 +104,7 @@ async function deleteCommunityById(req, res) {
 module.exports = {
 	getAllCommunities,
 	createCommunity,
+	getCommunityByName,
 	getCommunityById,
 	updateCommunityById,
 	deleteCommunityById,
