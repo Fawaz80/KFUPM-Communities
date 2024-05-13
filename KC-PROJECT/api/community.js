@@ -8,6 +8,9 @@ router.get("/", communityController.getAllCommunities);
 // Add a new community to the database
 router.post("/newCommunity", communityController.createCommunity);
 
+// Get communities by name
+router.get("/searchCommunities", communityController.getCommunityByName);
+
 // Get a community by ID
 router.get("/", communityController.getCommunityById);
 
