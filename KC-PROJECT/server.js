@@ -41,6 +41,11 @@ app.get("/profile", (req, res) => {
 	res.render("profile", { navUsername: navUsername });
 });
 
+app.get("/searchedCommunity", (req, res) => {
+	const navUsername = req.session.loggedIn ? req.session.username : "Guest";
+	res.render("searchedCommunity", { navUsername: navUsername });
+});
+
 app.get("/material", (req, res) => {
 	const navUsername = req.session.loggedIn ? req.session.username : "Guest";
 	res.render("material", { navUsername: navUsername });
