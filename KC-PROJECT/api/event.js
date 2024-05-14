@@ -6,7 +6,7 @@ const eventController = require("../controller/event");
 router.get("/", eventController.getAllEvents);
 
 // Add a new event to the database
-router.post("/", eventController.createEvent);
+router.post("/createEvent", eventController.createEvent);
 
 // Get a event by ID
 router.get('/', eventController.getEventById);
