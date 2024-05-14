@@ -9,7 +9,7 @@ router.get("/", userController.getAllUsers);
 router.post("/", userController.createUser);
 
 // Get a user by ID
-router.get("/", userController.getUserById);
+router.get("/getUserCommunities", userController.getUserCommunities);
 
 // Update a user by ID
 router.put("/", userController.updateUserById);
@@ -22,6 +22,8 @@ router.post("/logIn", userController.logIn);
 
 //signup request
 router.post("/signUp", userController.signUp);
+
+router.get("/getUserByName/name", userController.getUserByName);
 
 //export modules
 module.exports = router;

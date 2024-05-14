@@ -67,9 +67,9 @@ async function signUp(req, res) {
 }
 
 // Get a user by ID
-async function getUserById(req, res) {
+async function getUserCommunities(req, res) {
 	try {
-		const user = await User.findById(req.params.id);
+		const user =  User.findOne({username: req.session.usermame});
 		if (!user) {
 			return res.status(404).json({ message: "User not found" });
 		}
@@ -145,21 +145,28 @@ async function logIn(req, res) {
 		req.session.loggedIn = true;
 		req.session.username = username;
 		console.log(req.session.loggedIn + " " + req.session.username);
-		res.render("home", { navUsername: req.session.username });
+		let communityName =user.communities;
+	
+		res.render("home", { navUsername: req.session.username,comm: communityName });
 	} catch (error) {
 		console.error("Login error:", error);
 		res.status(500).send("An unexpected error occurred");
 	}
 }
-
+async function getUserByName(req,res){
+	const user = await User.findOne({username: req.session.usermame});
+	res.json(user) 
+}
 //export modules
 module.exports = {
 	getAllUsers,
 	createUser,
-	getUserById,
+	//getUserById,
 	updateUserById,
 	deleteUserById,
 	logIn,
 	signUp,
 	getUserByUsername,
+	getUserByName,
+	getUserCommunities,
 };
