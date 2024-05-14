@@ -128,7 +128,6 @@ async function deleteUserById(req, res) {
 async function logIn(req, res) {
 	try {
 		const { username, password } = req.body;
-		console.log(username);
 		// Find user by username
 		const user = await User.findOne({ username: username });
 		// If user not found, return error
