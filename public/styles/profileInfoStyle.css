@@ -1,0 +1,97 @@
+.button-container {
+	position: relative;
+
+	top: 0;
+
+	width: 100%;
+
+	display: flex;
+
+	justify-content: space-between;
+
+	padding: 10px;
+
+	background-color: transparent; /* Make the background of the container transparent */
+}
+
+.home-button {
+	padding: 10px 20px;
+
+	border: none;
+
+	background-color: transparent; /* Make the background color of the button transparent */
+
+	color: white; /* Set text color to blue */
+
+	font-size: 16px;
+
+	cursor: pointer;
+}
+
+.edit-button {
+	padding: 10px 20px;
+
+	border: none;
+
+	background-color: transparent; /* Make the background color of the button transparent */
+
+	color: white; /* Set text color to blue */
+
+	font-size: 16px;
+
+	cursor: pointer;
+}
+
+.centered-icon {
+	display: flex;
+
+	justify-content: fixed;
+
+	align-items: center;
+
+	height: 100vh; /* Make the container take the full viewport height */
+
+	flex-direction: column; /* Align items vertically */
+}
+
+.biper {
+	font-size: 5em; /* Adjust the font size to make the icon bigger */
+}
+
+.Bio {
+	text-align: center; /* Set text alignment to center */
+}
+
+.container {
+	display: flex;
+
+	justify-content: space-between; /* To push the content to opposite sides */
+
+	align-items: center; /* To vertically center the content */
+
+	width: 80%; /* Adjust as needed */
+
+	margin: 0 auto; /* To center the container horizontally */
+
+	padding: 20px 0; /* Add some vertical spacing */
+}
+
+.left-content {
+	order: 1; /* To make it appear on the left side */
+
+	text-align: center;
+}
+
+.right-content {
+	order: 2; /* To make it appear on the right side */
+
+	text-align: center;
+}
+
+.btn {
+	background-color: white; /* Change background color to green */
+
+	border-color: white; /* Change border color to match background color */
+
+	color: black;
+}
