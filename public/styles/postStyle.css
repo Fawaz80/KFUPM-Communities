@@ -40,7 +40,7 @@
     height: fit-content;
     display: grid;
     grid-template-rows: auto auto auto auto auto;
-    grid-template-columns: max-content auto auto;
+    grid-template-columns: min-content auto auto;
     row-gap: 2vh;
     align-items: center;
 }

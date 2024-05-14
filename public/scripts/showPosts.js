@@ -64,57 +64,57 @@ function showPosts(posts) {
     }
 }
 
-document.getElementsByClassName("creatPostInputsForm")[0].addEventListener("submit", (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-    if (!formData.get('toInput') || !formData.get('textInput') || !formData.get('ccInput')) {
-        alert('Please fill in all required fields.');
-        return;
-    }
+// document.getElementsByClassName("creatPostInputsForm")[0].addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     const form = e.target;
+//     const formData = new FormData(form);
+//     if (!formData.get('toInput') || !formData.get('textInput') || !formData.get('ccInput')) {
+//         alert('Please fill in all required fields.');
+//         return;
+//     }
 
-    else {
-        var post = {}
-        document.getElementsByClassName("creatPostInputsDiv")[0].style.display = "grid"
-        var date = new Date();
-        let year = date.getFullYear();
-        let month = date.getMonth() + 1;
-        let day = date.getDate();
-        if (month < 10) month = '0' + month;
-        if (day < 10) day = '0' + day;
-        let formattedDate = `${year}/${month}/${day}`;
-        console.log(formattedDate)
-        post = {
-            postOwner: user,
-            postCom: formData.get('toInput'),
-            postBody: formData.get('textInput'),
-            postImages: '',
-            postDate: formattedDate,
-            likers: [],
-            dislikers: [],
-            repliers: []
-        }
+//     else {
+//         var post = {}
+//         document.getElementsByClassName("creatPostInputsDiv")[0].style.display = "grid"
+//         var date = new Date();
+//         let year = date.getFullYear();
+//         let month = date.getMonth() + 1;
+//         let day = date.getDate();
+//         if (month < 10) month = '0' + month;
+//         if (day < 10) day = '0' + day;
+//         let formattedDate = `${year}/${month}/${day}`;
+//         console.log(formattedDate)
+//         post = {
+//             postOwner: user,
+//             postCom: formData.get('toInput'),
+//             postBody: formData.get('textInput'),
+//             postImages: '',
+//             postDate: formattedDate,
+//             likers: [],
+//             dislikers: [],
+//             repliers: []
+//         }
         
-        fetch('/newPost', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(post),
-            })
-            .then(response => response.json())
-            .then(data => console.log('Success:', data))
-            .catch((error) => console.error('Error:', error));
+//         fetch('/newPost', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(post),
+//             })
+//             .then(response => response.json())
+//             .then(data => console.log('Success:', data))
+//             .catch((error) => console.error('Error:', error));
             
-        document.getElementsByClassName("creatPostInputsDiv")[0].style.display = "none"
-        form.reset();
-        getPosts();
-    }
-})
+//         document.getElementsByClassName("creatPostInputsDiv")[0].style.display = "none"
+//         form.reset();
+//         getPosts();
+//     }
+// })
 
-document.getElementsByClassName("close")[0].addEventListener("click", (e) => {
-    e.preventDefault();
-    const form = e.target.parentNode;
-    document.getElementsByClassName("creatPostInputsDiv")[0].style.display = "none"
-    form.reset();
-});
+// document.getElementsByClassName("close")[0].addEventListener("click", (e) => {
+//     e.preventDefault();
+//     const form = e.target.parentNode;
+//     document.getElementsByClassName("creatPostInputsDiv")[0].style.display = "none"
+//     form.reset();
+// });
