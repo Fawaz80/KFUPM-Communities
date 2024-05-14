@@ -1,0 +1,34 @@
+<div class = "left-shadow">
+           <!-- write the code of the community info here-->
+        <div class="button-container">
+            <a href="/home"><button class="home-button" id="homeButton">Home</button></a>
+            <button class="edit-button" id="editButton">Edit</button>
+        </div>
+
+        <div class="centered-icon">
+            <i class="bippl bi-people-fill"></i>
+            <span id="currentComm"><strong>@CommunityX</strong></span>
+            <div class="container">
+              <div class="left-content">
+                  <p>Posts <br>
+                  {{posts}}</p>
+              </div>
+              <div class="right-content">
+                  <p>Members <br>
+                  {{members}}</p>
+              </div>
+          </div>
+            <div class="Bio">
+              <p class = "inter-text">{{comBio}}</p>  
+            </div>
+
+            {% if isOwner %}
+            <!--Show no buttons-->
+            {% elif isMember %}
+            <button type="button" class="btn btn-primary btn-lg join-button"><b>Leave</b></button>
+            {% else  %}
+            <button type="button" class="btn btn-primary btn-lg leave-button"><b>Join</b></button>
+            {% endif %}
+        </div>
+
+        </div>
