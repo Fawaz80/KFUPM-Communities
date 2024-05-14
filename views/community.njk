@@ -4,28 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles/mainStyle.css">
     <link rel="stylesheet" href="styles/navbarStyle.css">
     <link rel="stylesheet" href="styles/maingrid.css">
     <link rel="stylesheet" href="styles/postStyle.css">
     <link rel="stylesheet" href="styles/comInfoStyle.css"> <!--this file has the community info present in the left of the community home page-->
     <link rel="stylesheet" href="styles/comSpecialStyle.css"> <!--this file contains the event and materials styling that are present on the right of the screen and only in th community home page-->
-    <script src = "scripts/filesOverlay.js" defer></script>
-    <script src="scripts/showCommunityPosts.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
+   
     <title>KFUPM Communities</title>
 </head>
 <body>
     {% include "navbar.njk" %}
 
       <div class = "gridLayout">
-          {# <div class = "left-shadow">
+          <div class = "left-shadow">
            <!-- write the code of the community info here-->
         <div class="button-container">
             <a href="/home"><button class="home-button" id="homeButton">Home</button></a>
@@ -34,30 +31,27 @@
 
         <div class="centered-icon">
             <i class="bippl bi-people-fill"></i>
-            <strong>{{comName}}</strong> 
+            <strong>@CommunityX</strong> 
             <div class="container">
               <div class="left-content">
                   <p>Posts <br>
-                  {{posts}}</p>
+                  1508</p>
               </div>
               <div class="right-content">
                   <p>Members <br>
-                  {{members}}</p>
+                  203</p>
               </div>
           </div>
             <div class="Bio">
-              <p class = "inter-text">{{comBio}}</p>  
+              <p class = "inter-text">Welcome to our community
+              this community is for SWE students</p>  
             </div>
 
-            {% if isOwner %}
-            <!--Show no buttons-->
-            {% elif isMember %}
-            <button type="button" class="btn btn-primary btn-lg join-button"><b>Leave</b></button>
-            {% else isMember %}
-            <button type="button" class="btn btn-primary btn-lg leave-button"><b>Join</b></button>
-            {%endIf%}
-        </div>#}
-        {% include "communityInfo.njk" %}
+            <button type="button" class="btn btn-primary btn-lg join-button"><b>Join</b></button>
+
+        </div>
+
+        </div>
           <div class ="spacing"></div>
           <div class = "main-shadow">
             <!-- write the code of the posts board here-->
@@ -81,7 +75,7 @@
                       </ul>
                 </div>
                 <div class="allPostsDiv">
-                    {# <div class="postDiv">
+                    <div class="postDiv">
                         <div class="upperPost">
                             <img class="userImg" src="images/userIcon/userx.jpg">
                             <a href="/profile"class="userAccount">@user1</a>
@@ -105,27 +99,8 @@
                                 </svg><span class="numOfComments">2</span></button>
                             </div>
                         </div>  
-                    </div> #}
+                    </div>
                 </div>
-                 <div class="creatPostInputsDiv">
-                <form class="creatPostInputsForm">
-                  <h2 class="h2createPostInput">New Post To <span id="postTo"></span></h2>
-                  <button class="close">&#10005;</button>
-                  {# <label for="toInput">To:</label> #}
-                  {# <select type="" id="toInput" name="toInput"> #}
-                  {# </select> #}
-
-                  <label for="ccInput">CC:</label>
-                  <input type="text" id="ccInput" name="ccInput">
-
-                  <textarea type="text" id="textInput" rows="5" cols="20" name="textInput"></textarea>
-
-                  <button id="creatPostImportImg">Import image</button>
-
-                  <input type="submit" value="Post" id="creatPostInputsSubmit">
-                </form>
-              </div>
-
             </div>
         </div>
           <div class ="spacing"></div>
@@ -136,45 +111,22 @@
                     <h3 id="spanTitle">Events</h3>
                     <button id="inputButtonPlus" class="btn btn-secondary"><i class="bi bi-plus-circle"></i></button>
                 </div>
-                <ul class="rightSideList">
-                    {%for event in events%}
-                    <li><button class="eventsAndMaterials">{{ event }}</button></li>
-                    {% else %}
-                    <li>No events</li>
-                    {% endfor %}
-                </ul>
+                <ol class="rightSideList">
+                    <li><button class="eventsAndMaterials">@event 1 2024/5/21</button></li>
+                    <li><button class="eventsAndMaterials">@event 2 2024/5/22</button></li>
+                </ol>
             </div>
             <div class = "materials-shadow">
-               
                 <div class="inline">
                     <h3 id="spanTitle">Materials</h3>
-                    <a id = "newMaterialButton"><button id="inputButtonPlus" class="btn btn-secondary "><i class="bi bi-plus-circle"></i></button></a>
-                        <div class="overlayFileUpload" id="overlayFileUpload">
-                            <div class="files-overlay-content">
-                                <div class="overlay-header">Upload Files</div>
-                                <form action="upload" method="POST" enctype="multipart/form-data" id="uploadForm">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control input-field fileNameField" id="fileName fileNameField" name="materialName" placeholder="Type name">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" class="form-control-file" id="fileInput" name="file">
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <a href="" class="cancel-btn" id = "cancelFileUpload"> Cancel</a>
-                                        <button type="submit" class="btn upload-btn fileUpload"><strong>Upload</strong></button>
-                                    </div>
-                                </form>
-                            </div>
-                    </div>
+                    <button id="inputButtonPlus" class="btn btn-secondary"><i class="bi bi-plus-circle"></i></button>
                 </div>
-            </div>
-                <ul class="rightSideList">
-                    {% for material in materials %}
-                    <li><button class="eventsAndMaterials">{{ material }}</button></li>
-                    {% else %}
-                    <li>No materials</li>
-                    {% endfor %}
-                </ul>
+                <ol class="rightSideList">
+                    <li><button class="eventsAndMaterials">@file1</button></li>
+                    <li><button class="eventsAndMaterials">@file2</button></li>
+                    <li><button class="eventsAndMaterials">@file3</button></li>
+                    <li><button class="eventsAndMaterials">@file4</button></li>
+                </ol>
             </div>
           </div>
           

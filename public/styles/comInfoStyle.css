@@ -55,8 +55,7 @@
 	text-align: center;
 }
 
-.join-button,
-.leave-button {
+.join-button {
 	background-color: white; /* Change background color to green */
 	border-color: white; /* Change border color to match background color */
 	color: black;
@@ -66,8 +65,7 @@
 	font-size: small;
 }
 
-.join-button:hover,
-.leave-button {
+.join-button:hover {
 	color: black;
 	background-color: white;
 	box-shadow: white;

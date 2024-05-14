@@ -1,37 +1,85 @@
 .overlay {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-	z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999;
+    display: none; /* Initially hidden */
 }
 
 .overlay:target {
-	display: block;
+    display: flex; /* Change display to flex */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 .popup {
-	background-color: black; /* Change background color to black */
-	color: white; /* Change text color to white */
-	padding: 20px;
-	width: 300px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	border-radius: 8px;
+    background-color: black; /* Change background color to black */
+    color: white; /* Change text color to white */
+    padding: 20px;
+    width: 550px; /* Increase width */
+    border-radius: 10px;
+    position: relative; /* Set to relative for positioning the icon */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
+
+
 .buttons {
-	margin-top: 20px;
+    margin-top: 20px;
+    display: flex; /* Make buttons display flex for alignment */
+    justify-content: space-between; /* Distribute buttons evenly */
 }
 
 .buttons button,
 .buttons a {
-	margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button {
+    background-color: white; /* Change save button background color to white */
+    color: black; /* Change save button text color to black */
+}
+
+.cancelButton::after {
+    content: "\2190"; /* Unicode arrow character */
+    margin-left: 5px;
+}
+
+.buttons a {
+    background-color:white; /* Red */
+    color: black;
+    text-decoration: none;
+	border-radius: 10px; 
+}
+
+.buttons button:hover,
+.buttons a:hover {
+    background-color: rgba(255, 255, 255, 0.825); /* Darker white*/
+}
+
+/* Transparent text boxes */
+.popup input[type="text"],
+.popup textarea,
+.popup input[type="file"],
+.popup input[type="checkbox"] {
+    width: calc(100% - 22px); /* Subtract padding and border from width */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+    color: white; /* Text color */
+}
+
+.popup textarea {
+    height: 100px;
 }
 
 .bi {
@@ -44,6 +92,18 @@
 
 .community-item {
 	padding: 10px 0;
+	font-size: 24px;
+	
+}
+.community-item i {
+	font-size: 36px; /* Increase icon size */
+	text-align: left;
+}
+
+.community-item a {
+	text-decoration: none; /* Remove underline */
+	color: white; /* Change text color */
+	text-align: center;
 }
 
 .community-item:last-child {
@@ -54,5 +114,63 @@
 }
 
 #saveButton {
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.803);
+	border-radius: 10px;
 }
+
+  /* CSS to style the circle with a plus sign */
+.addCommunityButton i {
+	font-size: 24px; /* Initial size of the plus sign */
+	color: white; /* Initial color of the plus sign */
+	transition: all 0.3s ease; /* Smooth transition for color and size changes */
+	margin-left: 10px;
+}
+
+/* CSS to change color and size on hover */
+.addCommunityButton:hover i {
+	font-size: 32px; /* Larger size when hovered */
+	color: blue; /* Different color when hovered */
+}
+.addCommunityButton::after {
+	content: "Create a community"; /* Text for the tooltip */
+	position: absolute; /* Position the tooltip relative to the button */
+	top: 100%; /* Position the tooltip below the button */
+	left: 50%; /* Center the tooltip horizontally */
+	transform: translateX(-50%); /* Center the tooltip horizontally */
+	background-color: rgba(0, 128, 0, 0.693); /* Background color of the tooltip */
+	color: white; /* Text color of the tooltip */
+	padding: 5px; /* Padding for the tooltip */
+	border-radius: 5px; /* Border radius for the tooltip */
+	font-size: 14px; /* Font size of the tooltip */
+	visibility: hidden; /* Hide the tooltip by default */
+	opacity: 0; /* Hide the tooltip by default */
+	transition: visibility 0s, opacity 0.3s ease; /* Smooth transition for tooltip visibility */
+}
+
+/* CSS to show the tooltip on hover */
+.addCommunityButton:hover::after {
+	visibility: visible; /* Show the tooltip on hover */
+	opacity: 1; /* Show the tooltip on hover */
+}
+.addCommunityButton {
+	margin-left: 10px; /* Add margin to the left of the button */
+	position: relative; /* Positioning context for the tooltip */
+	display: inline-block; /* Ensure the tooltip has dimensions */
+}
+.icon-slot {
+	position: relative;
+    top: 50px; /* Move the icon down by 30 pixels */
+    text-align:right ; /* Move the icon to the left by 10 pixels */
+	right: 40px;
+	margin-left: 10px;
+    z-index: 1; /* Ensure the icon is above other content */
+    transition: top 0.3s, left 0.3s; /* Add transition effect for smooth animation */
+}
+
+
+.icon-slot i {
+    font-size: 100px; /* Adjust size of the image */
+}
+
+
+
