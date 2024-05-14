@@ -1,20 +1,20 @@
 {
-	"name": "kc-project",
-	"version": "1.0.0",
-	"main": "db.js",
-	"scripts": {
-		"start": "node server.js"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"description": "",
-	"dependencies": {
-		"bcrypt": "^5.1.1",
-		"express": "^4.19.2",
-		"express-session": "^1.18.0",
-		"mongodb": "^6.6.1",
-		"mongoose": "^8.3.4",
-		"nunjucks": "^3.2.4"
-	}
+  "name": "kc-project",
+  "version": "1.0.0",
+  "main": "db.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongodb": "^6.6.1",
+    "mongoose": "^8.3.4",
+    "nunjucks": "^3.2.4"
+  },
+  "description": ""
 }

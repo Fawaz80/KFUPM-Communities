@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="scripts/showCommunityPosts.js" defer></script>
     <title>KFUPM Communities</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
 
         <div class="centered-icon">
             <i class="bippl bi-people-fill"></i>
-            <strong>@CommunityX</strong> 
+            <span id="currentComm"><strong>@CommunityX</strong></span>
             <div class="container">
               <div class="left-content">
                   <p>Posts <br>
@@ -74,7 +75,7 @@
                       </ul>
                 </div>
                 <div class="allPostsDiv">
-                    <div class="postDiv">
+                    {# <div class="postDiv">
                         <div class="upperPost">
                             <img class="userImg" src="images/userIcon/userx.jpg">
                             <a href="/profile"class="userAccount">@user1</a>
@@ -98,8 +99,26 @@
                                 </svg><span class="numOfComments">2</span></button>
                             </div>
                         </div>  
-                    </div>
+                    </div> #}
                 </div>
+                <div class="creatPostInputsDiv">
+                <form class="creatPostInputsForm">
+                  <h2 class="h2createPostInput">New Post To <span id="postTo"></span></h2>
+                  <button class="close">&#10005;</button>
+                  {# <label for="toInput">To:</label> #}
+                  {# <select type="" id="toInput" name="toInput"> #}
+                  {# </select> #}
+
+                  <label for="ccInput">CC:</label>
+                  <input type="text" id="ccInput" name="ccInput">
+
+                  <textarea type="text" id="textInput" rows="5" cols="20" name="textInput"></textarea>
+
+                  <button id="creatPostImportImg">Import image</button>
+
+                  <input type="submit" value="Post" id="creatPostInputsSubmit">
+                </form>
+              </div>
             </div>
         </div>
           <div class ="spacing"></div>
