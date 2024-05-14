@@ -1,5 +1,7 @@
 // Import the Post model
 const Post = require('../models/post'); 
+const User = require('../models/user'); 
+const Community = require("../models/community")
 
 
 // Get all posts
@@ -16,9 +18,27 @@ async function getAllPosts(req, res) {
 // Create a new post
 async function createPost(req, res) {
     try {
-        const { postOwner, postCom, postBody, postImages, postDat } = req.body;
-        const newPost = new Post({ postOwner, postCom, postBody, postImages, postDat });
+        const { postOwner, postCom, postBody, postImages, postDate } = req.body;
+        var date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        if (month < 10) month = '0' + month;
+        if (day < 10) day = '0' + day;
+        let formattedDate = `${year}/${month}/${day}`;
+        const newPost = new Post({ postOwner: req.session.username, postCom: postCom, postBody: postBody, postImages: postImages, postDate: formattedDate });
         const savedPost = await newPost.save();
+        const user = await User.findOne({username : req.session.username})
+        const updatedUser = await User.findOneAndUpdate(
+            { username: user.username }, // Filter to find the user
+            { $push: { posts:  newPost} }, // Update to add the new section
+            { new: true }, // Return the updated document
+          );
+          const updatedCommunity = await Community.findOneAndUpdate(
+            { username: user.username }, // Filter to find the user
+            { $push: { posts:  newPost} }, // Update to add the new section
+            { new: true }, // Return the updated document
+          );
         res.status(201).json(savedPost);
     } catch (error) {
         res.status(500).json({ message: error.message });

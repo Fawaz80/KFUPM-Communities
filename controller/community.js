@@ -1,6 +1,8 @@
 // Import the Community model
 const Community = require("../models/community");
 const session = require("express-session");
+const User = require('../models/user'); 
+
 // Get all communities
 async function getAllCommunities(req, res) {
 	try {
