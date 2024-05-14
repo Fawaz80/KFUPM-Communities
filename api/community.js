@@ -3,7 +3,7 @@ const router = require("express").Router();
 const communityController = require("../controller/community");
 
 //Get list of all communities in the database
-router.get("/", communityController.getAllCommunities);
+router.get("/getCommunities", communityController.getAllCommunities);
 
 // Add a new community to the database
 router.post("/newCommunity", communityController.createCommunity);

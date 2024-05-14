@@ -3,10 +3,10 @@ const router = require("express").Router();
 const postController = require("../controller/post");
 
 //Get list of all posts in the database
-router.get("/", postController.getAllPosts);
+router.get("/getPosts", postController.getAllPosts);
 
 // Add a new post to the database
-router.post("/", postController.createPost);
+router.post("/newPost", postController.createPost);
 
 // Get a post by ID
 router.get('/', postController.getPostById);
