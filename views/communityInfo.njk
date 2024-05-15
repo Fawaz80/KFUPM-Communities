@@ -1,0 +1,37 @@
+ <script src="/scripts/comSwitch.js" defer></script>
+<div class = "left-shadow">
+           <!-- write the code of the community info here-->
+        <div class="button-container">
+            <form action = "loadHome" method = "POST">
+            <button class="home-button" id="homeButton" type = "submit">Home</button>
+            </form>
+            <button class="edit-button" id="editButton">Edit</button>
+        </div>
+
+        <div class="centered-icon">
+            {# <i class="bippl bi-people-fill" id = "comTracker"></i> #}
+            <span id="currentComm"><strong><i class="bippl bi-people-fill"></i></strong></span>
+            <strong><i>{{comName}}</i></strong>
+            <div class="container">
+              <div class="left-content">
+                  <p>Posts <br>
+                  {{postsNum}}</p>
+              </div>
+              <div class="right-content">
+                  <p>Members <br>
+                  {{membersNum}}</p>
+              </div>
+          </div>
+            <div class="Bio">
+              <p class = "inter-text">{{comBio}}</p>  
+            </div>
+
+            {% if isOwner %}
+            <!--Show no buttons-->
+            {% elif isMember %}
+            <button type="button" class="btn btn-primary btn-lg join-button"><b>Leave</b></button>
+            {% else  %}
+            <button type="button" class="btn btn-primary btn-lg leave-button"><b>Join</b></button>
+            {% endif %}
+        </div>
+        </div>
